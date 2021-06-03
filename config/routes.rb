@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+ 
+  resources :categories
   devise_for :users
   # get 'main/index'
   resources :main
-  root to: 'main#index'
+  resources :products
+  root to: 'products#index'
  
 
  
