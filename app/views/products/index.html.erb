@@ -1,6 +1,22 @@
 <h1>Products#index</h1>
 
-<% @products.each do |product| %>
-    <h4><%= link_to product.name, product_path(product.id) %></h4>
-<% end %>
-<%= link_to "Create Product", new_product_path %>
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+        <div class="col-md-4">
+            <div class="card mt-3">
+                <div class="Card-body">
+                    <h4><%= link_to product.name, product_path(product.id) %></h4>
+                    <%= link_to "View", product_path(product.id), class:"btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
