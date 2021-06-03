@@ -1,10 +1,20 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @categories = Category.all
+    
+    cate = params[:cate]
+    if !cate.nil?
+      @products = Product.where(:category_id => cate)
+    else
+      @products = Product.all
+    end
+
+  
   end
 
   def show
     @product = Product.find(params[:id])
+ 
   end
 
   def new
